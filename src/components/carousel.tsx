@@ -43,7 +43,6 @@ export default function Carousel() {
             <Image src={'carousel/casousel3.svg'} className=" block w-full h-full" alt="image" width={'100'} height={'0'} layout="responsive"/>
           </div>
           
-
           {/* Buttons */}
           <button
             type="button"

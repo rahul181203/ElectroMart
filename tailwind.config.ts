@@ -1,4 +1,4 @@
-import { gold, grass, ruby, sage, sky } from "@radix-ui/colors";
+import { gold, grass, indigo, ruby, sage, sky } from "@radix-ui/colors";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -13,7 +13,8 @@ const config: Config = {
       ...ruby,
       ...grass,
       ...gold,
-      ...sky
+      ...sky,
+      ...indigo
     }
   },
   plugins: [],

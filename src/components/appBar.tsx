@@ -1,10 +1,12 @@
-"use client"
 import { Box, Button, DialogContent, DialogRoot, DialogTrigger, Flex, Heading,Text } from "@radix-ui/themes";
 import Image from "next/image";
 import {TabsDemo} from './loginPop';
+import { auth, signOut } from "@/auth";
 
 
-export default function AppBar(){
+export const AppBar = async ()=>{
+    const session = await auth();
+    
     return (
         <>
             <Box className=" bg-sage3 sticky top-0" p={'3'} px={'9'}>
@@ -17,14 +19,24 @@ export default function AppBar(){
                         <a href="/" className=" font-semibold">My orders</a>
                     </Flex>
                     <Flex align={'center'} gap={'4'}>
-                        <DialogRoot>
-                            <DialogTrigger>
-                                <Button variant="soft">Login</Button>
-                            </DialogTrigger>
-                            <DialogContent>
-                                <TabsDemo/>
-                            </DialogContent>
-                        </DialogRoot>
+                        {
+                            (!session?.user)?
+                            <DialogRoot>
+                                <DialogTrigger>
+                                    <Button variant="soft">Login</Button>
+                                </DialogTrigger>
+                                <DialogContent>
+                                    <TabsDemo/>
+                                </DialogContent>
+                            </DialogRoot>
+                            :<form action={async ()=>{
+                                "use server"
+                                await signOut();
+                            }}>
+                                <Button type="submit" variant="soft">Logout</Button>
+                            </form>
+                        }
+                        
                         <a href="/" className="font-semibold">Cart</a>
                     </Flex>
                 </Flex>

@@ -80,14 +80,15 @@ export const TabsDemo = () => {
             <fieldset className="mb-[15px] w-full flex flex-col justify-start">
               <label
                 className="text-[13px] leading-none mb-2.5 text-violet12 block"
-                htmlFor="email"
+                htmlFor="Email-login"
               >
                 Email
               </label>
               <input
+              autoComplete="email"
                 type="email"
                 className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
-                id="Email"
+                id="Email-login"
                 {...form1.register("email")}
                 disabled={isPending}
                 placeholder="*******@gmail.com"
@@ -96,29 +97,30 @@ export const TabsDemo = () => {
             <fieldset className="mb-[15px] w-full flex flex-col justify-start">
               <label
                 className="text-[13px] leading-none mb-2.5 text-violet12 block"
-                htmlFor="username"
+                htmlFor="password-login"
               >
                 Password
               </label>
               <input
+              autoComplete="new-password"
                 type="password"
                 className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
-                id="password"
+                id="password-login"
                 disabled={isPending}
                 placeholder="******"
                 {...form1.register("password")}
               />
               <p>{msg}</p>
             </fieldset>
-            <div className="flex justify-end mt-5">
+            <Box className="flex justify-end mt-5">
               <Button
                 type="submit"
-                variant="solid"
-                className="inline-flex items-center justify-center rounded px-[15px] text-[15px] leading-none font-medium h-[35px] bg-green4 text-green11 hover:bg-green5 focus:shadow-[0_0_0_2px] focus:shadow-green7 outline-none cursor-default"
+                className=" bg-sage3 cursor-pointer"
+                variant={'soft'}
               >
                 Login
               </Button>
-            </div>
+            </Box>
           </form>
         {/* </Form> */}
         {/* <Seperato */}
@@ -147,13 +149,14 @@ export const TabsDemo = () => {
         <fieldset className="mb-[15px] w-full flex flex-col justify-start">
           <label
             className="text-[13px] leading-none mb-2.5 text-violet12 block"
-            htmlFor="Full Name"
+            htmlFor="name-reg"
           >
             Full Name
           </label>
           <input
+          autoComplete="name"
             className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
-            id="name"
+            id="name-reg"
             type="text"
             placeholder="Jhon Mid"
                 disabled={isPending}
@@ -163,13 +166,14 @@ export const TabsDemo = () => {
         <fieldset className="mb-[15px] w-full flex flex-col justify-start">
           <label
             className="text-[13px] leading-none mb-2.5 text-violet12 block"
-            htmlFor="email"
+            htmlFor="email-reg"
           >
             Email ID
           </label>
           <input
+          autoComplete="email"
             className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
-            id="email"
+            id="email-reg"
             type="email"
             placeholder="*****@gmail.com"
                 disabled={isPending}
@@ -179,13 +183,13 @@ export const TabsDemo = () => {
         <fieldset className="mb-[15px] w-full flex flex-col justify-start">
           <label
             className="text-[13px] leading-none mb-2.5 text-violet12 block"
-            htmlFor="password"
+            htmlFor="newPassword-reg"
           >
             Password
           </label>
           <input
             className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
-            id="newPassword"
+            id="newPassword-reg"
             type="password"
                 disabled={isPending}
                 placeholder="******"
@@ -195,14 +199,14 @@ export const TabsDemo = () => {
         <fieldset className="mb-[15px] w-full flex flex-col justify-start">
           <label
             className="text-[13px] leading-none mb-2.5 text-violet12 block"
-            htmlFor="confirmPassword"
+            htmlFor="confirmPassword-reg"
           >
             Confirm password
           </label>
           <input
             className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-violet11 shadow-[0_0_0_1px] shadow-violet7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-violet8 outline-none"
                 disabled={isPending}
-                id="confirmPassword"
+                id="confirmPassword-reg"
             placeholder="******"
             type="password"
             {...form2.register("cpass")}
@@ -211,8 +215,8 @@ export const TabsDemo = () => {
         <div className="flex justify-end mt-5">
           <Button
             type="submit"
-            variant="solid"
-            className=" bg-sage3 inline-flex items-center justify-center rounded px-[15px] text-[15px] leading-none font-medium h-[35px] bg-green4 text-green11 hover:bg-green5 focus:shadow-[0_0_0_2px] focus:shadow-green7 outline-none cursor-default"
+            variant="soft"
+            className=" bg-sage3 inline-flex items-center justify-center rounded px-[15px] text-[15px]  cursor-pointer"
             disabled={isPending}
             >
             Register

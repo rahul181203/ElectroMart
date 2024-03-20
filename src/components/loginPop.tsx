@@ -9,6 +9,8 @@ import { loginSchema, registerSchema } from "@/schemas/index";
 import { Login } from "../actions/login";
 import {useState, useTransition} from "react"
 import { register } from "../actions/register";
+import { signIn } from "next-auth/react";
+import { DEFAULT_REDIRECT_PATH } from "@/routes";
 
 export const TabsDemo = () => {
   const [isPending,startTransition] = useTransition();
@@ -47,6 +49,12 @@ export const TabsDemo = () => {
         console.log(data);
       })
     })    
+  }
+
+  const onClick=(provider:"google"|"facebook")=>{
+    signIn(provider,{
+      callbackUrl:DEFAULT_REDIRECT_PATH
+    })
   }
 
   return (
@@ -115,7 +123,7 @@ export const TabsDemo = () => {
             <Box className="flex justify-end mt-5">
               <Button
                 type="submit"
-                className=" bg-sage3 cursor-pointer"
+                className=" bg-sage3 hover:cursor-pointer"
                 variant={'soft'}
               >
                 Login
@@ -125,14 +133,14 @@ export const TabsDemo = () => {
         {/* </Form> */}
         {/* <Seperato */}
         <Flex direction={"column"} align={"center"} gap={"4"}>
-          <Box className="bg-sage2 w-fit p-2 rounded-md">
+          <Box className="bg-sage2 w-fit p-2 rounded-md cursor-pointer" onClick={()=>onClick("google")}>
             <Avatar src={"/logos/google.png"} fallback={"G"} mr={"2"} />
-            <Text> Sign In with Google</Text>
+            <Text>Sign In with Google</Text>
           </Box>
-          <Box className="bg-sage2 w-fit p-2 rounded-md">
-            <Avatar src={"/logos/apple.png"} fallback={"A"} mr={"2"} />
-            <Text> Sign In with Apple</Text>
-          </Box>
+          <Box className="bg-sage2 w-fit p-2 rounded-md cursor-pointer" onClick={()=>onClick('facebook')}>
+            <Avatar src={"/logos/fb.avif"} fallback={"A"} mr={"2"} />
+            <Text> Sign In with Facebook</Text>
+          </Box> 
         </Flex>
       </Tabs.Content>
 
@@ -216,7 +224,7 @@ export const TabsDemo = () => {
           <Button
             type="submit"
             variant="soft"
-            className=" bg-sage3 inline-flex items-center justify-center rounded px-[15px] text-[15px]  cursor-pointer"
+            className=" bg-sage3 inline-flex items-center justify-center rounded px-[15px] text-[15px]  hover:cursor-pointer"
             disabled={isPending}
             >
             Register

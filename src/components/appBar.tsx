@@ -9,7 +9,7 @@ export const AppBar = async ()=>{
     
     return (
         <>
-            <Box className=" bg-sage3 sticky top-0" p={'3'} px={'9'}>
+            <Box className=" bg-sage3 sticky top-0 z-10" p={'3'} px={'9'}>
                 <Flex justify={'between'}>
                     <Flex gap={'4'} align={'center'}>
                         <Image src={"/logo.webp"} alt="logo" height={'60'} width={'60'} />
@@ -22,8 +22,8 @@ export const AppBar = async ()=>{
                         {
                             (!session?.user)?
                             <DialogRoot>
-                                <DialogTrigger>
-                                    <Button variant="soft">Login</Button>
+                                <DialogTrigger >
+                                    <Button variant="soft" className="hover:cursor-pointer">Login</Button>
                                 </DialogTrigger>
                                 <DialogContent>
                                     <TabsDemo/>
@@ -33,7 +33,7 @@ export const AppBar = async ()=>{
                                 "use server"
                                 await signOut();
                             }}>
-                                <Button type="submit" variant="soft">Logout</Button>
+                                <Button type="submit" className="hover:cursor-pointer" variant="soft">Logout</Button>
                             </form>
                         }
                         

@@ -9,7 +9,7 @@ export const AppBar = async ()=>{
     
     return (
         <>
-            <Box className=" bg-sage3 sticky top-0 z-10" p={'3'} px={'9'}>
+            <Box className=" bg-sage3 sticky top-0 z-30" p={'3'} px={'9'}>
                 <Flex justify={'between'}>
                     <Flex gap={'4'} align={'center'}>
                         <Image src={"/logo.webp"} alt="logo" height={'60'} width={'60'} />

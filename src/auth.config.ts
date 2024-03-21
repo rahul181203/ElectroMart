@@ -36,24 +36,4 @@ export default {
   })
 ],
 secret:process.env.AUTH_SECRET,
-// callbacks:{
-  // async signIn({account,profile}) {
-  //   if(!profile?.email){
-  //       throw new Error("No Profile");
-  //   }
-  //   await db.user.upsert({
-  //       where:{
-  //           email: profile.email,
-  //       },
-  //       create:{
-  //           email:profile.email,
-  //           fullname:profile.name
-  //       },
-  //       update:{
-  //           fullname:profile.name
-  //       }
-  //   });
-  //   return true;
-  // },
-// }
 } satisfies NextAuthConfig

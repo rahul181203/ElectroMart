@@ -46,7 +46,7 @@ export default function Carousel() {
           {/* Buttons */}
           <button
             type="button"
-            className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            className="absolute top-0 start-0 z-10 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-prev
             onClick={prevSlide}
           >
@@ -60,7 +60,7 @@ export default function Carousel() {
           </button>
           <button
             type="button"
-            className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            className="absolute top-0 end-0 z-10 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next
             onClick={nextSlide}
           >

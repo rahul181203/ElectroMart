@@ -27,9 +27,6 @@ export const { handlers:{GET,POST}, auth, signIn, signOut } = NextAuth({
           }
       });
       return true;
-      // const exsistinguser = await getUserById(user.id as string);
-      // if(!exsistinguser || !exsistinguser.emailVerified) return false;
-      // return true;
     },
     async session({token,session}){
       console.log({sessionToken:token,session});
